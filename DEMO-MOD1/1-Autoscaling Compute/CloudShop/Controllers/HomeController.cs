@@ -31,28 +31,29 @@ namespace CloudShop.Controllers
         {
             return View();
         }
-
-        public ActionResult Index()
+        private void Diagnostic()
         {
             ViewBag.Message = Environment.MachineName;
-
-
-            System.Diagnostics.Trace.TraceError("HomeController Index()-TraceError trace output.");
 
             string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
 
             int start = connectionString.IndexOf(";Password=");
-            var end =connectionString.IndexOf(";",start+1);
-            var connectionStringSafe = connectionString.Remove(start, end-start);
+            var end = connectionString.IndexOf(";", start + 1);
+            var connectionStringSafe = connectionString.Remove(start, end - start);
             ViewBag.ConnectionString = connectionStringSafe;
 
             string shopName = ConfigurationManager.AppSettings["CloudShopName"].ToString();
 
-            //Alternative way to access variable through environment setting
-            shopName= System.Environment.GetEnvironmentVariable("APPSETTING_CloudShopName");
 
-            System.Diagnostics.Trace.TraceWarning("HomeController Index()- App Setting CloudShopName has value " + shopName + ".");
-            ViewBag.ShopName = shopName;
+            System.Diagnostics.Trace.TraceWarning("App Setting CloudShopName has value " + shopName + ".");
+            ViewBag.Title = shopName;
+        }
+        public ActionResult Index()
+        {
+
+            Diagnostic();
+            System.Diagnostics.Trace.TraceError("HomeController Index()-TraceError trace output.");
+            //show all products
             return Search(null);
         }
 
@@ -86,7 +87,7 @@ namespace CloudShop.Controllers
                 Products = filteredProducts,
                 SearchCriteria = SearchCriteria
             };
-
+            Diagnostic();
             return View("Index", model);
         }
 

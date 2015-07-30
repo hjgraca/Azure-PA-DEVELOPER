@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>@ViewBag.Title - Cloud Shop</title>
+        <title>Cloud Shop</title>
         <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
         <meta name="viewport" content="width=device-width" />
         @Styles.Render("~/Content/themes/base/css", "~/Content/css")
@@ -19,7 +19,7 @@
         <header>
             <div class="content-wrapper">
                 <div class="float-left">
-                    <p class="site-title">@Html.ActionLink("Cloud Shop", "Index", "Home")</p>
+                    <p class="site-title">@ViewBag.Title : @Html.ActionLink("Cloud Shop", "Index", "Home")</p>
                 </div>
                 <div class="float-right">
                     <section id="login">                        
