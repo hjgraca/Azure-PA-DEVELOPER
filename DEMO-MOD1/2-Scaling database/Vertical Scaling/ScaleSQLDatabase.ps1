@@ -46,7 +46,7 @@ $edition = 'Basic'
 
 
 Scale-Database -sqlserverName $sqlserverName -databaseName $databaseName -edition $edition -serviceLevel $serviceLevel
-# setting serivice level objective will take 15 -30 seconds..
+# setting serivice level objective will take 15 -30 seconds..if scaling down
 
  $newdb=Get-AzureSqlDatabase -ServerName $sqlserverName -DatabaseName $databaseName
  Write-Host $newdb.Name   "scale request to performance level"  $newdb.ServiceObjectiveName "is" $newdb.ServiceObjectiveAssignmentStateDescription

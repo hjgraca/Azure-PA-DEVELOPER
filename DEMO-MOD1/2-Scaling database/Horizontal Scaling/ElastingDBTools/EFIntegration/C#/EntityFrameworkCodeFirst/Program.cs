@@ -39,8 +39,8 @@ namespace EFCodeFirstElasticScale
         private static string shardmapmgrdb = "ShardMgtDB";
         private static string shard1 = "DB1";
         private static string shard2 = "DB2";
-        private static string userName = "morcinim";
-        private static string password = "RedW1ne!";
+        private static string userName = "demouser";
+        private static string password = "P@ssw0rd1!?";
         private static string applicationName = "ESC_EFv1.0";
 
         // Just two tenants for now.

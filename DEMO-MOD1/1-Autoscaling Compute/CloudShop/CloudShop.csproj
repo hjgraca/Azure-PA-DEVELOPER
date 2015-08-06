@@ -318,6 +318,8 @@
     <Content Include="Models\AdventureWorks.edmx.diagram">
       <DependentUpon>AdventureWorks.edmx</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\cloudshop-ne.pubxml" />
+    <None Include="Properties\PublishProfiles\cloudshop-we.pubxml" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Models\AdventureWorks.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -378,7 +380,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Properties\PublishProfiles\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">
