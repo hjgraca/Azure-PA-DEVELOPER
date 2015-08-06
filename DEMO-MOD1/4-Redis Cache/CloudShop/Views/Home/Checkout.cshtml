@@ -1,0 +1,13 @@
+﻿@model CloudShop.Models.IndexViewModel
+
+@{
+    ViewBag.Title = "Cloud Shop Checkout";
+}
+
+<h1>Your Order- @ViewBag.Message</h1>
+<label for="cart">You have selected the following products:</label>
+@using (Html.BeginForm("Remove", "Home"))
+{
+    @Html.DropDownListFor(m => m.Products, new SelectList(Model.Products, "product"))
+    <a href="javascript:document.forms[0].submit();">Remove product from cart</a>
+}
