@@ -1,0 +1,12 @@
+
+<!-- Paste just below the system.webServer element in web.config of CloudShop in Kudu -->
+
+    <httpProtocol> 
+
+      <customHeaders> 
+
+        <add name="ARR-Disable-Session-Affinity" value="true"/> 
+
+      </customHeaders> 
+
+    </httpProtocol> 
