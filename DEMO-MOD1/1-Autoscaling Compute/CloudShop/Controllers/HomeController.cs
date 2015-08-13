@@ -86,7 +86,7 @@ namespace CloudShop.Controllers
             stopWatch.Stop();
             TimeSpan ts = stopWatch.Elapsed;
 
-            string elapsedTime = String.Format("{0:00}.{1:000} sec", ts.Seconds, ts.Milliseconds);
+            string elapsedTime = String.Format("{0:00}.{1:000} sec", ts.Seconds, ts.Milliseconds );
 
 
             // add all products currently not in session
