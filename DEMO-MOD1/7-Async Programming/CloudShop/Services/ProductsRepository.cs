@@ -20,6 +20,7 @@ using CloudShop.Models;
 using System.Data.Entity;
 using System.Threading.Tasks;
 
+
 namespace CloudShop.Services
 {
     public class ProductsRepository : IProductRepository
@@ -37,9 +38,8 @@ namespace CloudShop.Services
         }
         public async Task<List<string>> GetProductsAsync()
         {
-            
 
-            AdventureWorksEntities context = new AdventureWorksEntities();
+             AdventureWorksEntities context = new AdventureWorksEntities();
             var query = from product in context.Products
                         select product.Name;
             return await query.ToListAsync();

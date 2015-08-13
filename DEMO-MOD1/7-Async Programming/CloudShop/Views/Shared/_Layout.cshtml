@@ -41,10 +41,12 @@
                 @RenderBody()
             </section>
         </div>
-
+       
         <footer>
             <div class="content-wrapper">
+                
                 <div class="float-left">
+                    <h4>Now: @DateTime.Now.ToShortDateString()-@DateTime.Now.ToLongTimeString() Product loading time: @ViewBag.RepoTime</h4>
                     <p>&copy; @DateTime.Now.Year - @ViewBag.ConnectionString</p>
                 </div>
                 <div class="float-right">

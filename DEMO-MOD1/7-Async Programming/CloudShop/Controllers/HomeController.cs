@@ -25,6 +25,7 @@ namespace CloudShop.Controllers
     using System.Configuration;
     using System.Threading;
     using System.Threading.Tasks;
+    using System.Diagnostics;
 
     [HandleError]
    
@@ -123,9 +124,16 @@ public ActionResult Index()
         [HttpPost]
         public async Task<ActionResult> Search(string SearchCriteria)
         {
+            Stopwatch stopWatch = new Stopwatch();
+            stopWatch.Start();
+
             Services.IProductRepository productRepository = new Services.ProductsRepository();
             var products = string.IsNullOrEmpty(SearchCriteria) ?
                 await productRepository.GetProductsAsync() : await productRepository.SearchAsync(SearchCriteria);
+            stopWatch.Stop();
+            TimeSpan ts = stopWatch.Elapsed;
+
+            string elapsedTime = String.Format("{0:00}.{1:000} sec", ts.Seconds, ts.Milliseconds);
 
             // add all products currently not in session
             var itemsInSession = this.Session["Cart"] as List<string> ?? new List<string>();
@@ -138,6 +146,7 @@ public ActionResult Index()
                 SearchCriteria = SearchCriteria
             };
             Diagnostic();
+            ViewBag.RepoTime = elapsedTime;
             return View("Index", model);
         }
         public ActionResult Checkout()
