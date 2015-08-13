@@ -1,0 +1,80 @@
+﻿@model CloudShop.Models.IndexViewModel
+@{
+    ;
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Message</h1>
+                <p>
+                    <h2> @ViewBag.ConnectionString</h2>
+                </p>
+            </hgroup>
+            <p>
+            </p>
+        </div>
+    </section>
+}
+
+<label for="items">Select a product from the list:</label>
+
+@using (Html.BeginForm("Search", "Home"))
+{
+    <div id="searchCriteriaDiv" style="margin:0px;">
+        @Html.TextBoxFor(m => m.SearchCriteria, new { @class = "searchCriteriaTxt" })
+        <a href="javascript:search()">Search</a>
+    </div>
+}
+
+@using (Html.BeginForm("Add", "Home"))
+{
+    @Html.Hidden("selectedProduct")
+
+    <div id="productsListDiv" style="background-color:White; margin:0px;">
+        
+        <ul id="productsList">
+            @foreach (var product in Model.Products)
+            {
+                <li onclick="javascript:setSelected(this)">@product</li>
+            }
+        </ul>
+
+    </div>
+    
+    <br />
+    
+    <a href="javascript:submitSelected();">Add item to cart</a>
+}
+
+@section scripts {
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $("#SearchCriteria").focus();
+    });
+
+    function search() {
+
+        document.forms[0].submit();
+    }
+
+    function setSelected(obj) {
+        $(".selected").removeClass("selected");
+        $(obj).addClass("selected");
+    }
+
+    function submitSelected() {
+        if ($(".selected").length == 0) {
+            alert("Please select a product");
+            return;
+        }
+
+        var product = $(".selected")[0].innerText;
+        $("#selectedProduct").val(product);
+
+        document.forms[1].submit();
+    }
+
+</script>
+}
