@@ -34,6 +34,7 @@ namespace CloudShop.Controllers
         }
         private void Diagnostic()
         {
+            //remote
             ViewBag.Message = Environment.MachineName;
 
             string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
