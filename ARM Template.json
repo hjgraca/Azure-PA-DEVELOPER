@@ -1,0 +1,2256 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "servers_cloudshop_name": {
+            "defaultValue": "cloudshop",
+            "type": "String"
+        },
+        "servers_cloudshop_eus_name": {
+            "defaultValue": "cloudshop-eus",
+            "type": "String"
+        },
+        "Redis_cloudshopredis_name": {
+            "defaultValue": "cloudshopredis",
+            "type": "String"
+        },
+        "servers_cloudshop_scus_name": {
+            "defaultValue": "cloudshop-scus",
+            "type": "String"
+        },
+        "profiles_cloudshopsuscdn_name": {
+            "defaultValue": "cloudshopsuscdn",
+            "type": "String"
+        },
+        "serverfarms_cloudshopwest_name": {
+            "defaultValue": "cloudshopwest",
+            "type": "String"
+        },
+        "serverfarms_cloudshop_sea_name": {
+            "defaultValue": "cloudshop-sea",
+            "type": "String"
+        },
+        "sites_CloudShop20171030093305_name": {
+            "defaultValue": "CloudShop20171030093305",
+            "type": "String"
+        },
+        "autoscalesettings_scaleweb_name": {
+            "defaultValue": "scaleweb",
+            "type": "String"
+        },
+        "autoscalesettings_scale_web_name": {
+            "defaultValue": "scale web",
+            "type": "String"
+        },
+        "sites_CloudShop20171030093305_we_name": {
+            "defaultValue": "CloudShop20171030093305-we",
+            "type": "String"
+        },
+        "sites_cloudshop20171030093305_sea_name": {
+            "defaultValue": "cloudshop20171030093305-sea",
+            "type": "String"
+        },
+        "databases_master_name": {
+            "defaultValue": "master",
+            "type": "String"
+        },
+        "databases_cloudshop_name": {
+            "defaultValue": "cloudshop",
+            "type": "String"
+        },
+        "keys_ServiceManaged_name": {
+            "defaultValue": "ServiceManaged",
+            "type": "String"
+        },
+        "trafficManagerProfiles_cloudshoptm_name": {
+            "defaultValue": "cloudshoptm",
+            "type": "String"
+        },
+        "databases_master_name_1": {
+            "defaultValue": "master",
+            "type": "String"
+        },
+        "serverfarms_CloudShop20171030093305Plan_name": {
+            "defaultValue": "CloudShop20171030093305Plan",
+            "type": "String"
+        },
+        "databases_master_name_2": {
+            "defaultValue": "master",
+            "type": "String"
+        },
+        "config_web_name": {
+            "defaultValue": "web",
+            "type": "String"
+        },
+        "databases_cloudshop_name_1": {
+            "defaultValue": "cloudshop",
+            "type": "String"
+        },
+        "keys_ServiceManaged_name_1": {
+            "defaultValue": "ServiceManaged",
+            "type": "String"
+        },
+        "databases_cloudshop_name_2": {
+            "defaultValue": "cloudshop",
+            "type": "String"
+        },
+        "keys_ServiceManaged_name_2": {
+            "defaultValue": "ServiceManaged",
+            "type": "String"
+        },
+        "auditingPolicies_Default_name": {
+            "defaultValue": "Default",
+            "type": "String"
+        },
+        "config_web_name_1": {
+            "defaultValue": "web",
+            "type": "String"
+        },
+        "config_web_name_2": {
+            "defaultValue": "web",
+            "type": "String"
+        },
+        "encryptionProtector_current_name": {
+            "defaultValue": "current",
+            "type": "String"
+        },
+        "auditingPolicies_Default_name_1": {
+            "defaultValue": "Default",
+            "type": "String"
+        },
+        "auditingPolicies_Default_name_2": {
+            "defaultValue": "Default",
+            "type": "String"
+        },
+        "encryptionProtector_current_name_1": {
+            "defaultValue": "current",
+            "type": "String"
+        },
+        "endpoints_cloudshopsuscdn_name": {
+            "defaultValue": "cloudshopsuscdn",
+            "type": "String"
+        },
+        "encryptionProtector_current_name_2": {
+            "defaultValue": "current",
+            "type": "String"
+        },
+        "failoverGroups_failgroupcloudshop_name": {
+            "defaultValue": "failgroupcloudshop",
+            "type": "String"
+        },
+        "failoverGroups_failgroupcloudshop_name_1": {
+            "defaultValue": "failgroupcloudshop",
+            "type": "String"
+        },
+        "firewallRules_AllowAllWindowsAzureIps_name": {
+            "defaultValue": "AllowAllWindowsAzureIps",
+            "type": "String"
+        },
+        "advisors_DropIndex_name": {
+            "defaultValue": "DropIndex",
+            "type": "String"
+        },
+        "advisors_CreateIndex_name": {
+            "defaultValue": "CreateIndex",
+            "type": "String"
+        },
+        "advisors_SchemaIssue_name": {
+            "defaultValue": "SchemaIssue",
+            "type": "String"
+        },
+        "firewallRules_AllowAllWindowsAzureIps_name_1": {
+            "defaultValue": "AllowAllWindowsAzureIps",
+            "type": "String"
+        },
+        "advisors_DropIndex_name_1": {
+            "defaultValue": "DropIndex",
+            "type": "String"
+        },
+        "firewallRules_AllowAllWindowsAzureIps_name_2": {
+            "defaultValue": "AllowAllWindowsAzureIps",
+            "type": "String"
+        },
+        "advisors_DropIndex_name_2": {
+            "defaultValue": "DropIndex",
+            "type": "String"
+        },
+        "advisors_CreateIndex_name_1": {
+            "defaultValue": "CreateIndex",
+            "type": "String"
+        },
+        "advisors_SchemaIssue_name_1": {
+            "defaultValue": "SchemaIssue",
+            "type": "String"
+        },
+        "auditingPolicies_Default_name_3": {
+            "defaultValue": "Default",
+            "type": "String"
+        },
+        "advisors_CreateIndex_name_2": {
+            "defaultValue": "CreateIndex",
+            "type": "String"
+        },
+        "advisors_SchemaIssue_name_2": {
+            "defaultValue": "SchemaIssue",
+            "type": "String"
+        },
+        "backupLongTermRetentionVaults_RegisteredVault_name": {
+            "defaultValue": "RegisteredVault",
+            "type": "String"
+        },
+        "geoBackupPolicies_Default_name": {
+            "defaultValue": "Default",
+            "type": "String"
+        },
+        "advisors_ForceLastGoodPlan_name": {
+            "defaultValue": "ForceLastGoodPlan",
+            "type": "String"
+        },
+        "advisors_DbParameterization_name": {
+            "defaultValue": "DbParameterization",
+            "type": "String"
+        },
+        "auditingPolicies_Default_name_4": {
+            "defaultValue": "Default",
+            "type": "String"
+        },
+        "backupLongTermRetentionVaults_RegisteredVault_name_1": {
+            "defaultValue": "RegisteredVault",
+            "type": "String"
+        },
+        "geoBackupPolicies_Default_name_1": {
+            "defaultValue": "Default",
+            "type": "String"
+        },
+        "auditingPolicies_Default_name_5": {
+            "defaultValue": "Default",
+            "type": "String"
+        },
+        "firewallRules_ClientIPAddress_2017_10_30_09:24:59_name": {
+            "defaultValue": "ClientIPAddress_2017-10-30_09:24:59",
+            "type": "String"
+        },
+        "firewallRules_ClientIPAddress_2017_11_06_09:11:32_name": {
+            "defaultValue": "ClientIPAddress_2017-11-06_09:11:32",
+            "type": "String"
+        },
+        "advisors_ForceLastGoodPlan_name_1": {
+            "defaultValue": "ForceLastGoodPlan",
+            "type": "String"
+        },
+        "backupLongTermRetentionVaults_RegisteredVault_name_2": {
+            "defaultValue": "RegisteredVault",
+            "type": "String"
+        },
+        "geoBackupPolicies_Default_name_2": {
+            "defaultValue": "Default",
+            "type": "String"
+        },
+        "advisors_DbParameterization_name_1": {
+            "defaultValue": "DbParameterization",
+            "type": "String"
+        },
+        "advisors_ForceLastGoodPlan_name_2": {
+            "defaultValue": "ForceLastGoodPlan",
+            "type": "String"
+        },
+        "advisors_DbParameterization_name_2": {
+            "defaultValue": "DbParameterization",
+            "type": "String"
+        },
+        "firewallRules_ClientIPAddress_2017_11_05_09:16:13_name": {
+            "defaultValue": "ClientIPAddress_2017-11-05_09:16:13",
+            "type": "String"
+        },
+        "firewallRules_ClientIPAddress_2017_11_06_09:11:59_name": {
+            "defaultValue": "ClientIPAddress_2017-11-06_09:11:59",
+            "type": "String"
+        },
+        "transparentDataEncryption_current_name": {
+            "defaultValue": "current",
+            "type": "String"
+        },
+        "transparentDataEncryption_current_name_1": {
+            "defaultValue": "current",
+            "type": "String"
+        },
+        "transparentDataEncryption_current_name_2": {
+            "defaultValue": "current",
+            "type": "String"
+        },
+        "backupLongTermRetentionPolicies_Default_name": {
+            "defaultValue": "Default",
+            "type": "String"
+        },
+        "hostNameBindings_cloudshoptm.trafficmanager.net_name": {
+            "defaultValue": "cloudshoptm.trafficmanager.net",
+            "type": "String"
+        },
+        "hostNameBindings_cloudshoptm.trafficmanager.net_name_1": {
+            "defaultValue": "cloudshoptm.trafficmanager.net",
+            "type": "String"
+        },
+        "backupLongTermRetentionPolicies_Default_name_1": {
+            "defaultValue": "Default",
+            "type": "String"
+        },
+        "hostNameBindings_cloudshoptm.trafficmanager.net_name_2": {
+            "defaultValue": "cloudshoptm.trafficmanager.net",
+            "type": "String"
+        },
+        "backupLongTermRetentionPolicies_Default_name_2": {
+            "defaultValue": "Default",
+            "type": "String"
+        },
+        "hostNameBindings_cloudshop20171030093305.azurewebsites.net_name": {
+            "defaultValue": "cloudshop20171030093305.azurewebsites.net",
+            "type": "String"
+        },
+        "hostNameBindings_cloudshop20171030093305_we.azurewebsites.net_name": {
+            "defaultValue": "cloudshop20171030093305-we.azurewebsites.net",
+            "type": "String"
+        },
+        "hostNameBindings_cloudshop20171030093305_sea.azurewebsites.net_name": {
+            "defaultValue": "cloudshop20171030093305-sea.azurewebsites.net",
+            "type": "String"
+        },
+        "origins_cloudshop20171030093305_azurewebsites_net_name": {
+            "defaultValue": "cloudshop20171030093305-azurewebsites-net",
+            "type": "String"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Cache/Redis/cloudshopredis'.",
+            "type": "Microsoft.Cache/Redis",
+            "name": "[parameters('Redis_cloudshopredis_name')]",
+            "apiVersion": "2016-04-01",
+            "location": "West Europe",
+            "tags": {},
+            "scale": null,
+            "properties": {
+                "redisVersion": "3.2.7",
+                "sku": {
+                    "name": "Standard",
+                    "family": "C",
+                    "capacity": 1
+                },
+                "enableNonSslPort": true,
+                "redisConfiguration": {
+                    "maxclients": "1000",
+                    "maxmemory-reserved": "50",
+                    "maxfragmentationmemory-reserved": "50",
+                    "maxmemory-delta": "50"
+                }
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourcegroups/cloudshop/providers/Microsoft.Cdn/profiles/cloudshopsuscdn'.",
+            "type": "Microsoft.Cdn/profiles",
+            "sku": {
+                "name": "Standard_Akamai"
+            },
+            "name": "[parameters('profiles_cloudshopsuscdn_name')]",
+            "apiVersion": "2016-04-02",
+            "location": "SouthCentralUs",
+            "tags": {},
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "resourceState": "Active"
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/microsoft.insights/autoscalesettings/scaleweb'.",
+            "type": "microsoft.insights/autoscalesettings",
+            "name": "[parameters('autoscalesettings_scaleweb_name')]",
+            "apiVersion": "2014-04-01",
+            "location": "West Europe",
+            "tags": {},
+            "scale": null,
+            "properties": {
+                "profiles": [
+                    {
+                        "name": "Auto created scale condition",
+                        "capacity": {
+                            "minimum": "2",
+                            "maximum": "2",
+                            "default": "2"
+                        },
+                        "rules": []
+                    }
+                ],
+                "enabled": true,
+                "name": "[parameters('autoscalesettings_scaleweb_name')]",
+                "targetResourceUri": "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_cloudshopwest_name'))]"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_cloudshopwest_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/microsoft.insights/autoscalesettings/scale web'.",
+            "type": "microsoft.insights/autoscalesettings",
+            "name": "[parameters('autoscalesettings_scale_web_name')]",
+            "apiVersion": "2014-04-01",
+            "location": "South Central US",
+            "tags": {},
+            "scale": null,
+            "properties": {
+                "profiles": [
+                    {
+                        "name": "Auto created scale condition",
+                        "capacity": {
+                            "minimum": "1",
+                            "maximum": "1",
+                            "default": "1"
+                        },
+                        "rules": []
+                    }
+                ],
+                "enabled": true,
+                "name": "[parameters('autoscalesettings_scale_web_name')]",
+                "targetResourceUri": "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_CloudShop20171030093305Plan_name'))]"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_CloudShop20171030093305Plan_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Network/trafficManagerProfiles/cloudshoptm'.",
+            "type": "Microsoft.Network/trafficManagerProfiles",
+            "name": "[parameters('trafficManagerProfiles_cloudshoptm_name')]",
+            "apiVersion": "2017-05-01",
+            "location": "global",
+            "tags": {},
+            "scale": null,
+            "properties": {
+                "profileStatus": "Enabled",
+                "trafficRoutingMethod": "Performance",
+                "dnsConfig": {
+                    "relativeName": "[parameters('trafficManagerProfiles_cloudshoptm_name')]",
+                    "fqdn": "[concat(parameters('trafficManagerProfiles_cloudshoptm_name'),'.trafficmanager.net')]",
+                    "ttl": 60
+                },
+                "monitorConfig": {
+                    "protocol": "HTTP",
+                    "port": 80,
+                    "path": "/",
+                    "intervalInSeconds": 30,
+                    "toleratedNumberOfFailures": 3,
+                    "timeoutInSeconds": 10
+                },
+                "endpoints": [
+                    {
+                        "name": "cloudshop-eastus",
+                        "type": "Microsoft.Network/trafficManagerProfiles/azureEndpoints",
+                        "properties": {
+                            "endpointStatus": "Enabled",
+                            "targetResourceId": "[resourceId('Microsoft.Web/sites', parameters('sites_CloudShop20171030093305_name'))]",
+                            "target": "cloudshop20171030093305.azurewebsites.net",
+                            "weight": 1,
+                            "priority": 1,
+                            "endpointLocation": "South Central US"
+                        }
+                    },
+                    {
+                        "name": "cloudshop-we",
+                        "type": "Microsoft.Network/trafficManagerProfiles/azureEndpoints",
+                        "properties": {
+                            "endpointStatus": "Enabled",
+                            "targetResourceId": "[resourceId('Microsoft.Web/sites', parameters('sites_CloudShop20171030093305_we_name'))]",
+                            "target": "cloudshop20171030093305-we.azurewebsites.net",
+                            "weight": 1,
+                            "priority": 2,
+                            "endpointLocation": "West Europe"
+                        }
+                    },
+                    {
+                        "name": "cloudshop-sea",
+                        "type": "Microsoft.Network/trafficManagerProfiles/azureEndpoints",
+                        "properties": {
+                            "endpointStatus": "Enabled",
+                            "targetResourceId": "[resourceId('Microsoft.Web/sites', parameters('sites_cloudshop20171030093305_sea_name'))]",
+                            "target": "cloudshop20171030093305-sea.azurewebsites.net",
+                            "weight": 1,
+                            "priority": 3,
+                            "endpointLocation": "Southeast Asia"
+                        }
+                    }
+                ]
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_CloudShop20171030093305_name'))]",
+                "[resourceId('Microsoft.Web/sites', parameters('sites_CloudShop20171030093305_we_name'))]",
+                "[resourceId('Microsoft.Web/sites', parameters('sites_cloudshop20171030093305_sea_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Sql/servers/cloudshop-eus'.",
+            "type": "Microsoft.Sql/servers",
+            "kind": "v12.0",
+            "name": "[parameters('servers_cloudshop_eus_name')]",
+            "apiVersion": "2015-05-01-preview",
+            "location": "eastus",
+            "scale": null,
+            "properties": {
+                "administratorLogin": "hjgraca",
+                "version": "12.0"
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Sql/servers/cloudshop-scus'.",
+            "type": "Microsoft.Sql/servers",
+            "kind": "v12.0",
+            "name": "[parameters('servers_cloudshop_scus_name')]",
+            "apiVersion": "2015-05-01-preview",
+            "location": "southcentralus",
+            "scale": null,
+            "properties": {
+                "administratorLogin": "hjgraca",
+                "version": "12.0"
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Sql/servers/cloudshop'.",
+            "type": "Microsoft.Sql/servers",
+            "kind": "v12.0",
+            "name": "[parameters('servers_cloudshop_name')]",
+            "apiVersion": "2015-05-01-preview",
+            "location": "westeurope",
+            "scale": null,
+            "properties": {
+                "administratorLogin": "hjgraca",
+                "version": "12.0"
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Web/serverfarms/CloudShop20171030093305Plan'.",
+            "type": "Microsoft.Web/serverfarms",
+            "sku": {
+                "name": "S1",
+                "tier": "Standard",
+                "size": "S1",
+                "family": "S",
+                "capacity": 1
+            },
+            "kind": "app",
+            "name": "[parameters('serverfarms_CloudShop20171030093305Plan_name')]",
+            "apiVersion": "2016-09-01",
+            "location": "South Central US",
+            "scale": null,
+            "properties": {
+                "name": "[parameters('serverfarms_CloudShop20171030093305Plan_name')]",
+                "workerTierName": null,
+                "adminSiteName": null,
+                "hostingEnvironmentProfile": null,
+                "perSiteScaling": false,
+                "reserved": false,
+                "targetWorkerCount": 0,
+                "targetWorkerSizeId": 0
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Web/serverfarms/cloudshopwest'.",
+            "type": "Microsoft.Web/serverfarms",
+            "sku": {
+                "name": "S1",
+                "tier": "Standard",
+                "size": "S1",
+                "family": "S",
+                "capacity": 2
+            },
+            "kind": "app",
+            "name": "[parameters('serverfarms_cloudshopwest_name')]",
+            "apiVersion": "2016-09-01",
+            "location": "West Europe",
+            "scale": null,
+            "properties": {
+                "name": "[parameters('serverfarms_cloudshopwest_name')]",
+                "workerTierName": null,
+                "adminSiteName": null,
+                "hostingEnvironmentProfile": null,
+                "perSiteScaling": false,
+                "reserved": false,
+                "targetWorkerCount": 0,
+                "targetWorkerSizeId": 0
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Web/serverfarms/cloudshop-sea'.",
+            "type": "Microsoft.Web/serverfarms",
+            "sku": {
+                "name": "S1",
+                "tier": "Standard",
+                "size": "S1",
+                "family": "S",
+                "capacity": 1
+            },
+            "kind": "app",
+            "name": "[parameters('serverfarms_cloudshop_sea_name')]",
+            "apiVersion": "2016-09-01",
+            "location": "Southeast Asia",
+            "scale": null,
+            "properties": {
+                "name": "[parameters('serverfarms_cloudshop_sea_name')]",
+                "workerTierName": null,
+                "adminSiteName": null,
+                "hostingEnvironmentProfile": null,
+                "perSiteScaling": false,
+                "reserved": false,
+                "targetWorkerCount": 0,
+                "targetWorkerSizeId": 0
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Web/sites/CloudShop20171030093305'.",
+            "type": "Microsoft.Web/sites",
+            "kind": "app",
+            "name": "[parameters('sites_CloudShop20171030093305_name')]",
+            "apiVersion": "2016-08-01",
+            "location": "South Central US",
+            "tags": {
+                "hidden-related:/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Web/serverfarms/CloudShop20171030093305Plan": "empty"
+            },
+            "scale": null,
+            "properties": {
+                "enabled": true,
+                "hostNameSslStates": [
+                    {
+                        "name": "[concat(parameters('sites_CloudShop20171030093305_name'),'cloudshop20171030093305.azurewebsites.net')]",
+                        "sslState": "Disabled",
+                        "virtualIP": null,
+                        "thumbprint": null,
+                        "toUpdate": null,
+                        "hostType": "Standard"
+                    },
+                    {
+                        "name": "[concat(parameters('sites_CloudShop20171030093305_name'),'cloudshop20171030093305.scm.azurewebsites.net')]",
+                        "sslState": "Disabled",
+                        "virtualIP": null,
+                        "thumbprint": null,
+                        "toUpdate": null,
+                        "hostType": "Repository"
+                    },
+                    {
+                        "name": "cloudshoptm.trafficmanager.net",
+                        "sslState": "Disabled",
+                        "virtualIP": null,
+                        "thumbprint": null,
+                        "toUpdate": null,
+                        "hostType": "Standard"
+                    }
+                ],
+                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_CloudShop20171030093305Plan_name'))]",
+                "reserved": false,
+                "siteConfig": null,
+                "scmSiteAlsoStopped": false,
+                "hostingEnvironmentProfile": null,
+                "clientAffinityEnabled": false,
+                "clientCertEnabled": false,
+                "hostNamesDisabled": false,
+                "containerSize": 0,
+                "dailyMemoryTimeQuota": 0,
+                "cloningInfo": null
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_CloudShop20171030093305Plan_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Web/sites/CloudShop20171030093305-we'.",
+            "type": "Microsoft.Web/sites",
+            "kind": "app",
+            "name": "[parameters('sites_CloudShop20171030093305_we_name')]",
+            "apiVersion": "2016-08-01",
+            "location": "West Europe",
+            "tags": {
+                "hidden-related:/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourcegroups/cloudshop/providers/Microsoft.Web/serverfarms/cloudshopwest": "empty"
+            },
+            "scale": null,
+            "properties": {
+                "enabled": true,
+                "hostNameSslStates": [
+                    {
+                        "name": "[concat(parameters('sites_CloudShop20171030093305_we_name'),'cloudshop20171030093305-we.azurewebsites.net')]",
+                        "sslState": "Disabled",
+                        "virtualIP": null,
+                        "thumbprint": null,
+                        "toUpdate": null,
+                        "hostType": "Standard"
+                    },
+                    {
+                        "name": "[concat(parameters('sites_CloudShop20171030093305_we_name'),'cloudshop20171030093305-we.scm.azurewebsites.net')]",
+                        "sslState": "Disabled",
+                        "virtualIP": null,
+                        "thumbprint": null,
+                        "toUpdate": null,
+                        "hostType": "Repository"
+                    },
+                    {
+                        "name": "cloudshoptm.trafficmanager.net",
+                        "sslState": "Disabled",
+                        "virtualIP": null,
+                        "thumbprint": null,
+                        "toUpdate": null,
+                        "hostType": "Standard"
+                    }
+                ],
+                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_cloudshopwest_name'))]",
+                "reserved": false,
+                "siteConfig": null,
+                "scmSiteAlsoStopped": false,
+                "hostingEnvironmentProfile": null,
+                "clientAffinityEnabled": false,
+                "clientCertEnabled": false,
+                "hostNamesDisabled": false,
+                "containerSize": 0,
+                "dailyMemoryTimeQuota": 0,
+                "cloningInfo": null
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_cloudshopwest_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Web/sites/cloudshop20171030093305-sea'.",
+            "type": "Microsoft.Web/sites",
+            "kind": "app",
+            "name": "[parameters('sites_cloudshop20171030093305_sea_name')]",
+            "apiVersion": "2016-08-01",
+            "location": "Southeast Asia",
+            "tags": {
+                "hidden-related:/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourcegroups/cloudshop/providers/Microsoft.Web/serverfarms/cloudshop-sea": "empty"
+            },
+            "scale": null,
+            "properties": {
+                "enabled": true,
+                "hostNameSslStates": [
+                    {
+                        "name": "[concat(parameters('sites_cloudshop20171030093305_sea_name'),'.azurewebsites.net')]",
+                        "sslState": "Disabled",
+                        "virtualIP": null,
+                        "thumbprint": null,
+                        "toUpdate": null,
+                        "hostType": "Standard"
+                    },
+                    {
+                        "name": "[concat(parameters('sites_cloudshop20171030093305_sea_name'),'.scm.azurewebsites.net')]",
+                        "sslState": "Disabled",
+                        "virtualIP": null,
+                        "thumbprint": null,
+                        "toUpdate": null,
+                        "hostType": "Repository"
+                    },
+                    {
+                        "name": "cloudshoptm.trafficmanager.net",
+                        "sslState": "Disabled",
+                        "virtualIP": null,
+                        "thumbprint": null,
+                        "toUpdate": null,
+                        "hostType": "Standard"
+                    }
+                ],
+                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_cloudshop_sea_name'))]",
+                "reserved": false,
+                "siteConfig": null,
+                "scmSiteAlsoStopped": false,
+                "hostingEnvironmentProfile": null,
+                "clientAffinityEnabled": false,
+                "clientCertEnabled": false,
+                "hostNamesDisabled": false,
+                "containerSize": 0,
+                "dailyMemoryTimeQuota": 0,
+                "cloningInfo": null
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_cloudshop_sea_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourcegroups/cloudshop/providers/Microsoft.Cdn/profiles/cloudshopsuscdn/endpoints/cloudshopsuscdn'.",
+            "type": "Microsoft.Cdn/profiles/endpoints",
+            "name": "[concat(parameters('profiles_cloudshopsuscdn_name'), '/', parameters('endpoints_cloudshopsuscdn_name'))]",
+            "apiVersion": "2016-04-02",
+            "location": "SouthCentralUs",
+            "tags": {},
+            "scale": null,
+            "properties": {
+                "originHostHeader": "cloudshop20171030093305.azurewebsites.net",
+                "isHttpAllowed": true,
+                "isHttpsAllowed": true,
+                "queryStringCachingBehavior": "IgnoreQueryString",
+                "originPath": null,
+                "origins": [
+                    {
+                        "name": "cloudshop20171030093305-azurewebsites-net",
+                        "properties": {
+                            "hostName": "cloudshop20171030093305.azurewebsites.net",
+                            "httpPort": 80,
+                            "httpsPort": 443
+                        }
+                    }
+                ],
+                "contentTypesToCompress": [],
+                "isCompressionEnabled": false
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Cdn/profiles', parameters('profiles_cloudshopsuscdn_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourcegroups/cloudshop/providers/Microsoft.Cdn/profiles/cloudshopsuscdn/endpoints/cloudshopsuscdn/origins/cloudshop20171030093305-azurewebsites-net'.",
+            "type": "Microsoft.Cdn/profiles/endpoints/origins",
+            "name": "[concat(parameters('profiles_cloudshopsuscdn_name'), '/', parameters('endpoints_cloudshopsuscdn_name'), '/', parameters('origins_cloudshop20171030093305_azurewebsites_net_name'))]",
+            "apiVersion": "2016-04-02",
+            "scale": null,
+            "properties": {
+                "hostName": "cloudshop20171030093305.azurewebsites.net",
+                "httpPort": 80,
+                "httpsPort": 443
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Cdn/profiles', parameters('profiles_cloudshopsuscdn_name'))]",
+                "[resourceId('Microsoft.Cdn/profiles/endpoints', parameters('profiles_cloudshopsuscdn_name'), parameters('endpoints_cloudshopsuscdn_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Sql/servers/cloudshop-eus/auditingPolicies/Default'.",
+            "type": "Microsoft.Sql/servers/auditingPolicies",
+            "name": "[concat(parameters('servers_cloudshop_eus_name'), '/', parameters('auditingPolicies_Default_name_1'))]",
+            "apiVersion": "2014-04-01",
+            "location": "East US",
+            "scale": null,
+            "properties": {
+                "auditingState": "New",
+                "eventTypesToAudit": "PlainSQL_Success,PlainSQL_Failure,ParameterizedSQL_Success,ParameterizedSQL_Failure,StoredProcedure_Success,StoredProcedure_Failure,Login_Success,Login_Failure,TransactionManagement_Success,TransactionManagement_Failure",
+                "storageAccountName": null,
+                "storageAccountKey": null,
+                "storageAccountSecondaryKey": null,
+                "storageTableEndpoint": null,
+                "storageAccountResourceGroupName": null,
+                "storageAccountSubscriptionId": null,
+                "fullAuditLogsTableName": "SQLDBAuditLogsCloudshopeus",
+                "auditLogsTableName": "Cloudshopeus",
+                "retentionDays": "0"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_cloudshop_eus_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Sql/servers/cloudshop-eus/backupLongTermRetentionVaults/RegisteredVault'.",
+            "type": "Microsoft.Sql/servers/backupLongTermRetentionVaults",
+            "name": "[concat(parameters('servers_cloudshop_eus_name'), '/', parameters('backupLongTermRetentionVaults_RegisteredVault_name_1'))]",
+            "apiVersion": "2014-04-01",
+            "location": "East US",
+            "scale": null,
+            "properties": {
+                "recoveryServicesVaultResourceId": null
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_cloudshop_eus_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Sql/servers/cloudshop-eus/databases/cloudshop'.",
+            "type": "Microsoft.Sql/servers/databases",
+            "kind": "v12.0,user",
+            "name": "[concat(parameters('servers_cloudshop_eus_name'), '/', parameters('databases_cloudshop_name_1'))]",
+            "apiVersion": "2014-04-01-preview",
+            "location": "East US",
+            "scale": null,
+            "properties": {
+                "databaseId": "c450177a-3635-4cc7-bc2d-1e197b93215e",
+                "edition": "Standard",
+                "status": "Online",
+                "serviceLevelObjective": "S1",
+                "collation": "SQL_Latin1_General_CP1_CI_AS",
+                "maxSizeBytes": "2147483648",
+                "creationDate": "2017-11-05T17:47:40.473Z",
+                "currentServiceObjectiveId": "1b1ebd4d-d903-4baa-97f9-4ea675f5e928",
+                "requestedServiceObjectiveId": "1b1ebd4d-d903-4baa-97f9-4ea675f5e928",
+                "requestedServiceObjectiveName": "S1",
+                "sampleName": null,
+                "defaultSecondaryLocation": "West US",
+                "earliestRestoreDate": "2017-11-08T00:00:00Z",
+                "elasticPoolName": null,
+                "containmentState": 2,
+                "readScale": "Disabled",
+                "failoverGroupId": "[resourceId('Microsoft.Sql/servers/failoverGroups', parameters('servers_cloudshop_eus_name'), parameters('failoverGroups_failgroupcloudshop_name_1'))]",
+                "zoneRedundant": false
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_cloudshop_eus_name'))]",
+                "[resourceId('Microsoft.Sql/servers/failoverGroups', parameters('servers_cloudshop_eus_name'), parameters('failoverGroups_failgroupcloudshop_name_1'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Sql/servers/cloudshop-eus/databases/master'.",
+            "type": "Microsoft.Sql/servers/databases",
+            "kind": "v12.0,system",
+            "name": "[concat(parameters('servers_cloudshop_eus_name'), '/', parameters('databases_master_name_1'))]",
+            "apiVersion": "2014-04-01-preview",
+            "location": "East US",
+            "scale": null,
+            "properties": {
+                "databaseId": "f25fa747-b84e-4cd4-8af0-80a46dd20367",
+                "edition": "System",
+                "status": "Online",
+                "serviceLevelObjective": "System0",
+                "collation": "SQL_Latin1_General_CP1_CI_AS",
+                "maxSizeBytes": "32212254720",
+                "creationDate": "2017-11-05T17:46:34.517Z",
+                "currentServiceObjectiveId": "29dd7459-4a7c-4e56-be22-f0adda49440d",
+                "requestedServiceObjectiveId": "29dd7459-4a7c-4e56-be22-f0adda49440d",
+                "requestedServiceObjectiveName": "System0",
+                "sampleName": null,
+                "defaultSecondaryLocation": "West US",
+                "earliestRestoreDate": null,
+                "elasticPoolName": null,
+                "containmentState": 2,
+                "readScale": "Disabled",
+                "failoverGroupId": null,
+                "zoneRedundant": false
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_cloudshop_eus_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Sql/servers/cloudshop-eus/firewallRules/AllowAllWindowsAzureIps'.",
+            "type": "Microsoft.Sql/servers/firewallRules",
+            "kind": "v12.0",
+            "name": "[concat(parameters('servers_cloudshop_eus_name'), '/', parameters('firewallRules_AllowAllWindowsAzureIps_name_1'))]",
+            "apiVersion": "2014-04-01-preview",
+            "location": "East US",
+            "scale": null,
+            "properties": {
+                "startIpAddress": "0.0.0.0",
+                "endIpAddress": "0.0.0.0"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_cloudshop_eus_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Sql/servers/cloudshop-eus/firewallRules/ClientIPAddress_2017-11-05_09:16:13'.",
+            "type": "Microsoft.Sql/servers/firewallRules",
+            "kind": "v12.0",
+            "name": "[concat(parameters('servers_cloudshop_eus_name'), '/', parameters('firewallRules_ClientIPAddress_2017_11_05_09:16:13_name'))]",
+            "apiVersion": "2014-04-01-preview",
+            "location": "East US",
+            "scale": null,
+            "properties": {
+                "startIpAddress": "79.169.179.29",
+                "endIpAddress": "79.169.179.29"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_cloudshop_eus_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Sql/servers/cloudshop-eus/firewallRules/ClientIPAddress_2017-11-06_09:11:59'.",
+            "type": "Microsoft.Sql/servers/firewallRules",
+            "kind": "v12.0",
+            "name": "[concat(parameters('servers_cloudshop_eus_name'), '/', parameters('firewallRules_ClientIPAddress_2017_11_06_09:11:59_name'))]",
+            "apiVersion": "2014-04-01-preview",
+            "location": "East US",
+            "scale": null,
+            "properties": {
+                "startIpAddress": "94.245.87.250",
+                "endIpAddress": "94.245.87.250"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_cloudshop_eus_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Sql/servers/cloudshop-eus/encryptionProtector/current'.",
+            "type": "Microsoft.Sql/servers/encryptionProtector",
+            "kind": "servicemanaged",
+            "name": "[concat(parameters('servers_cloudshop_eus_name'), '/', parameters('encryptionProtector_current_name_1'))]",
+            "apiVersion": "2015-05-01-preview",
+            "scale": null,
+            "properties": {
+                "serverKeyName": "ServiceManaged",
+                "serverKeyType": "ServiceManaged"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_cloudshop_eus_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Sql/servers/cloudshop-eus/failoverGroups/failgroupcloudshop'.",
+            "type": "Microsoft.Sql/servers/failoverGroups",
+            "name": "[concat(parameters('servers_cloudshop_eus_name'), '/', parameters('failoverGroups_failgroupcloudshop_name_1'))]",
+            "apiVersion": "2015-05-01-preview",
+            "location": "East US",
+            "scale": null,
+            "properties": {
+                "readWriteEndpoint": {
+                    "failoverPolicy": "Automatic",
+                    "failoverWithDataLossGracePeriodMinutes": 60
+                },
+                "readOnlyEndpoint": {
+                    "failoverPolicy": "Disabled"
+                },
+                "partnerServers": [
+                    {
+                        "id": "[resourceId('Microsoft.Sql/servers', parameters('servers_cloudshop_name'))]"
+                    }
+                ],
+                "databases": [
+                    "/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Sql/servers/cloudshop-eus/databases/cloudshop"
+                ]
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_cloudshop_eus_name'))]",
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_cloudshop_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Sql/servers/cloudshop-eus/keys/ServiceManaged'.",
+            "type": "Microsoft.Sql/servers/keys",
+            "kind": "servicemanaged",
+            "name": "[concat(parameters('servers_cloudshop_eus_name'), '/', parameters('keys_ServiceManaged_name_1'))]",
+            "apiVersion": "2015-05-01-preview",
+            "scale": null,
+            "properties": {
+                "serverKeyType": "[parameters('keys_ServiceManaged_name_1')]"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_cloudshop_eus_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Sql/servers/cloudshop-eus/databases/cloudshop/advisors/CreateIndex'.",
+            "type": "Microsoft.Sql/servers/databases/advisors",
+            "name": "[concat(parameters('servers_cloudshop_eus_name'), '/', parameters('databases_cloudshop_name_1'), '/', parameters('advisors_CreateIndex_name_1'))]",
+            "apiVersion": "2014-04-01",
+            "scale": null,
+            "properties": {
+                "autoExecuteValue": "Disabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_cloudshop_eus_name'))]",
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_cloudshop_eus_name'), parameters('databases_cloudshop_name_1'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Sql/servers/cloudshop-eus/databases/cloudshop/advisors/DropIndex'.",
+            "type": "Microsoft.Sql/servers/databases/advisors",
+            "name": "[concat(parameters('servers_cloudshop_eus_name'), '/', parameters('databases_cloudshop_name_1'), '/', parameters('advisors_DropIndex_name_1'))]",
+            "apiVersion": "2014-04-01",
+            "scale": null,
+            "properties": {
+                "autoExecuteValue": "Disabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_cloudshop_eus_name'))]",
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_cloudshop_eus_name'), parameters('databases_cloudshop_name_1'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Sql/servers/cloudshop-eus/databases/cloudshop/advisors/DbParameterization'.",
+            "type": "Microsoft.Sql/servers/databases/advisors",
+            "name": "[concat(parameters('servers_cloudshop_eus_name'), '/', parameters('databases_cloudshop_name_1'), '/', parameters('advisors_DbParameterization_name_1'))]",
+            "apiVersion": "2014-04-01",
+            "scale": null,
+            "properties": {
+                "autoExecuteValue": "Disabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_cloudshop_eus_name'))]",
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_cloudshop_eus_name'), parameters('databases_cloudshop_name_1'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Sql/servers/cloudshop-eus/databases/cloudshop/advisors/SchemaIssue'.",
+            "type": "Microsoft.Sql/servers/databases/advisors",
+            "name": "[concat(parameters('servers_cloudshop_eus_name'), '/', parameters('databases_cloudshop_name_1'), '/', parameters('advisors_SchemaIssue_name_1'))]",
+            "apiVersion": "2014-04-01",
+            "scale": null,
+            "properties": {
+                "autoExecuteValue": "Disabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_cloudshop_eus_name'))]",
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_cloudshop_eus_name'), parameters('databases_cloudshop_name_1'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Sql/servers/cloudshop-eus/databases/cloudshop/advisors/ForceLastGoodPlan'.",
+            "type": "Microsoft.Sql/servers/databases/advisors",
+            "name": "[concat(parameters('servers_cloudshop_eus_name'), '/', parameters('databases_cloudshop_name_1'), '/', parameters('advisors_ForceLastGoodPlan_name_1'))]",
+            "apiVersion": "2014-04-01",
+            "scale": null,
+            "properties": {
+                "autoExecuteValue": "Disabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_cloudshop_eus_name'))]",
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_cloudshop_eus_name'), parameters('databases_cloudshop_name_1'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Sql/servers/cloudshop-eus/databases/cloudshop/auditingPolicies/Default'.",
+            "type": "Microsoft.Sql/servers/databases/auditingPolicies",
+            "name": "[concat(parameters('servers_cloudshop_eus_name'), '/', parameters('databases_cloudshop_name_1'), '/', parameters('auditingPolicies_Default_name_4'))]",
+            "apiVersion": "2014-04-01",
+            "location": "East US",
+            "scale": null,
+            "properties": {
+                "auditingState": "New",
+                "eventTypesToAudit": "PlainSQL_Success,PlainSQL_Failure,ParameterizedSQL_Success,ParameterizedSQL_Failure,StoredProcedure_Success,StoredProcedure_Failure,Login_Success,Login_Failure,TransactionManagement_Success,TransactionManagement_Failure",
+                "storageAccountName": null,
+                "storageAccountKey": null,
+                "storageAccountSecondaryKey": null,
+                "storageTableEndpoint": null,
+                "storageAccountResourceGroupName": null,
+                "storageAccountSubscriptionId": null,
+                "useServerDefault": "Enabled",
+                "fullAuditLogsTableName": "SQLDBAuditLogsCloudshopeusCloudshop",
+                "auditLogsTableName": "CloudshopeusCloudshop",
+                "retentionDays": "0"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_cloudshop_eus_name'))]",
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_cloudshop_eus_name'), parameters('databases_cloudshop_name_1'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Sql/servers/cloudshop-eus/databases/cloudshop/backupLongTermRetentionPolicies/Default'.",
+            "type": "Microsoft.Sql/servers/databases/backupLongTermRetentionPolicies",
+            "name": "[concat(parameters('servers_cloudshop_eus_name'), '/', parameters('databases_cloudshop_name_1'), '/', parameters('backupLongTermRetentionPolicies_Default_name_1'))]",
+            "apiVersion": "2014-04-01",
+            "location": "East US",
+            "scale": null,
+            "properties": {
+                "state": "Disabled",
+                "recoveryServicesBackupPolicyResourceId": null
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_cloudshop_eus_name'))]",
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_cloudshop_eus_name'), parameters('databases_cloudshop_name_1'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Sql/servers/cloudshop-eus/databases/cloudshop/geoBackupPolicies/Default'.",
+            "type": "Microsoft.Sql/servers/databases/geoBackupPolicies",
+            "name": "[concat(parameters('servers_cloudshop_eus_name'), '/', parameters('databases_cloudshop_name_1'), '/', parameters('geoBackupPolicies_Default_name_1'))]",
+            "apiVersion": "2014-04-01",
+            "location": "East US",
+            "scale": null,
+            "properties": {
+                "state": "Enabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_cloudshop_eus_name'))]",
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_cloudshop_eus_name'), parameters('databases_cloudshop_name_1'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Sql/servers/cloudshop-eus/databases/cloudshop/transparentDataEncryption/current'.",
+            "type": "Microsoft.Sql/servers/databases/transparentDataEncryption",
+            "name": "[concat(parameters('servers_cloudshop_eus_name'), '/', parameters('databases_cloudshop_name_1'), '/', parameters('transparentDataEncryption_current_name_1'))]",
+            "apiVersion": "2014-04-01",
+            "location": "East US",
+            "scale": null,
+            "properties": {
+                "status": "Enabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_cloudshop_eus_name'))]",
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_cloudshop_eus_name'), parameters('databases_cloudshop_name_1'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Sql/servers/cloudshop-scus/auditingPolicies/Default'.",
+            "type": "Microsoft.Sql/servers/auditingPolicies",
+            "name": "[concat(parameters('servers_cloudshop_scus_name'), '/', parameters('auditingPolicies_Default_name_2'))]",
+            "apiVersion": "2014-04-01",
+            "location": "South Central US",
+            "scale": null,
+            "properties": {
+                "auditingState": "New",
+                "eventTypesToAudit": "PlainSQL_Success,PlainSQL_Failure,ParameterizedSQL_Success,ParameterizedSQL_Failure,StoredProcedure_Success,StoredProcedure_Failure,Login_Success,Login_Failure,TransactionManagement_Success,TransactionManagement_Failure",
+                "storageAccountName": null,
+                "storageAccountKey": null,
+                "storageAccountSecondaryKey": null,
+                "storageTableEndpoint": null,
+                "storageAccountResourceGroupName": null,
+                "storageAccountSubscriptionId": null,
+                "fullAuditLogsTableName": "SQLDBAuditLogsCloudshopscus",
+                "auditLogsTableName": "Cloudshopscus",
+                "retentionDays": "0"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_cloudshop_scus_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Sql/servers/cloudshop-scus/backupLongTermRetentionVaults/RegisteredVault'.",
+            "type": "Microsoft.Sql/servers/backupLongTermRetentionVaults",
+            "name": "[concat(parameters('servers_cloudshop_scus_name'), '/', parameters('backupLongTermRetentionVaults_RegisteredVault_name_2'))]",
+            "apiVersion": "2014-04-01",
+            "location": "South Central US",
+            "scale": null,
+            "properties": {
+                "recoveryServicesVaultResourceId": null
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_cloudshop_scus_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Sql/servers/cloudshop-scus/databases/cloudshop'.",
+            "type": "Microsoft.Sql/servers/databases",
+            "kind": "v12.0,user",
+            "name": "[concat(parameters('servers_cloudshop_scus_name'), '/', parameters('databases_cloudshop_name_2'))]",
+            "apiVersion": "2014-04-01-preview",
+            "location": "South Central US",
+            "scale": null,
+            "properties": {
+                "databaseId": "d2d6e204-9d11-4877-a1c0-daa6fce329d1",
+                "edition": "Standard",
+                "status": "Online",
+                "serviceLevelObjective": "S1",
+                "collation": "SQL_Latin1_General_CP1_CI_AS",
+                "maxSizeBytes": "2147483648",
+                "creationDate": "2017-11-06T10:36:42.287Z",
+                "currentServiceObjectiveId": "1b1ebd4d-d903-4baa-97f9-4ea675f5e928",
+                "requestedServiceObjectiveId": "1b1ebd4d-d903-4baa-97f9-4ea675f5e928",
+                "requestedServiceObjectiveName": "S1",
+                "sampleName": null,
+                "defaultSecondaryLocation": "North Central US",
+                "earliestRestoreDate": "2017-11-08T00:00:00Z",
+                "elasticPoolName": null,
+                "containmentState": 2,
+                "readScale": "Disabled",
+                "failoverGroupId": null,
+                "zoneRedundant": false
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_cloudshop_scus_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Sql/servers/cloudshop-scus/databases/master'.",
+            "type": "Microsoft.Sql/servers/databases",
+            "kind": "v12.0,system",
+            "name": "[concat(parameters('servers_cloudshop_scus_name'), '/', parameters('databases_master_name_2'))]",
+            "apiVersion": "2014-04-01-preview",
+            "location": "South Central US",
+            "scale": null,
+            "properties": {
+                "databaseId": "75545d5f-c2c5-4776-a44a-175284b35426",
+                "edition": "System",
+                "status": "Online",
+                "serviceLevelObjective": "System0",
+                "collation": "SQL_Latin1_General_CP1_CI_AS",
+                "maxSizeBytes": "32212254720",
+                "creationDate": "2017-11-06T10:35:39.433Z",
+                "currentServiceObjectiveId": "29dd7459-4a7c-4e56-be22-f0adda49440d",
+                "requestedServiceObjectiveId": "29dd7459-4a7c-4e56-be22-f0adda49440d",
+                "requestedServiceObjectiveName": "System0",
+                "sampleName": null,
+                "defaultSecondaryLocation": "North Central US",
+                "earliestRestoreDate": null,
+                "elasticPoolName": null,
+                "containmentState": 2,
+                "readScale": "Disabled",
+                "failoverGroupId": null,
+                "zoneRedundant": false
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_cloudshop_scus_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Sql/servers/cloudshop-scus/firewallRules/AllowAllWindowsAzureIps'.",
+            "type": "Microsoft.Sql/servers/firewallRules",
+            "kind": "v12.0",
+            "name": "[concat(parameters('servers_cloudshop_scus_name'), '/', parameters('firewallRules_AllowAllWindowsAzureIps_name_2'))]",
+            "apiVersion": "2014-04-01-preview",
+            "location": "South Central US",
+            "scale": null,
+            "properties": {
+                "startIpAddress": "0.0.0.0",
+                "endIpAddress": "0.0.0.0"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_cloudshop_scus_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Sql/servers/cloudshop-scus/encryptionProtector/current'.",
+            "type": "Microsoft.Sql/servers/encryptionProtector",
+            "kind": "servicemanaged",
+            "name": "[concat(parameters('servers_cloudshop_scus_name'), '/', parameters('encryptionProtector_current_name_2'))]",
+            "apiVersion": "2015-05-01-preview",
+            "scale": null,
+            "properties": {
+                "serverKeyName": "ServiceManaged",
+                "serverKeyType": "ServiceManaged"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_cloudshop_scus_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Sql/servers/cloudshop-scus/keys/ServiceManaged'.",
+            "type": "Microsoft.Sql/servers/keys",
+            "kind": "servicemanaged",
+            "name": "[concat(parameters('servers_cloudshop_scus_name'), '/', parameters('keys_ServiceManaged_name_2'))]",
+            "apiVersion": "2015-05-01-preview",
+            "scale": null,
+            "properties": {
+                "serverKeyType": "[parameters('keys_ServiceManaged_name_2')]"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_cloudshop_scus_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Sql/servers/cloudshop-scus/databases/cloudshop/advisors/CreateIndex'.",
+            "type": "Microsoft.Sql/servers/databases/advisors",
+            "name": "[concat(parameters('servers_cloudshop_scus_name'), '/', parameters('databases_cloudshop_name_2'), '/', parameters('advisors_CreateIndex_name_2'))]",
+            "apiVersion": "2014-04-01",
+            "scale": null,
+            "properties": {
+                "autoExecuteValue": "Disabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_cloudshop_scus_name'))]",
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_cloudshop_scus_name'), parameters('databases_cloudshop_name_2'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Sql/servers/cloudshop-scus/databases/cloudshop/advisors/DropIndex'.",
+            "type": "Microsoft.Sql/servers/databases/advisors",
+            "name": "[concat(parameters('servers_cloudshop_scus_name'), '/', parameters('databases_cloudshop_name_2'), '/', parameters('advisors_DropIndex_name_2'))]",
+            "apiVersion": "2014-04-01",
+            "scale": null,
+            "properties": {
+                "autoExecuteValue": "Disabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_cloudshop_scus_name'))]",
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_cloudshop_scus_name'), parameters('databases_cloudshop_name_2'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Sql/servers/cloudshop-scus/databases/cloudshop/advisors/DbParameterization'.",
+            "type": "Microsoft.Sql/servers/databases/advisors",
+            "name": "[concat(parameters('servers_cloudshop_scus_name'), '/', parameters('databases_cloudshop_name_2'), '/', parameters('advisors_DbParameterization_name_2'))]",
+            "apiVersion": "2014-04-01",
+            "scale": null,
+            "properties": {
+                "autoExecuteValue": "Disabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_cloudshop_scus_name'))]",
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_cloudshop_scus_name'), parameters('databases_cloudshop_name_2'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Sql/servers/cloudshop-scus/databases/cloudshop/advisors/SchemaIssue'.",
+            "type": "Microsoft.Sql/servers/databases/advisors",
+            "name": "[concat(parameters('servers_cloudshop_scus_name'), '/', parameters('databases_cloudshop_name_2'), '/', parameters('advisors_SchemaIssue_name_2'))]",
+            "apiVersion": "2014-04-01",
+            "scale": null,
+            "properties": {
+                "autoExecuteValue": "Disabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_cloudshop_scus_name'))]",
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_cloudshop_scus_name'), parameters('databases_cloudshop_name_2'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Sql/servers/cloudshop-scus/databases/cloudshop/advisors/ForceLastGoodPlan'.",
+            "type": "Microsoft.Sql/servers/databases/advisors",
+            "name": "[concat(parameters('servers_cloudshop_scus_name'), '/', parameters('databases_cloudshop_name_2'), '/', parameters('advisors_ForceLastGoodPlan_name_2'))]",
+            "apiVersion": "2014-04-01",
+            "scale": null,
+            "properties": {
+                "autoExecuteValue": "Disabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_cloudshop_scus_name'))]",
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_cloudshop_scus_name'), parameters('databases_cloudshop_name_2'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Sql/servers/cloudshop-scus/databases/cloudshop/auditingPolicies/Default'.",
+            "type": "Microsoft.Sql/servers/databases/auditingPolicies",
+            "name": "[concat(parameters('servers_cloudshop_scus_name'), '/', parameters('databases_cloudshop_name_2'), '/', parameters('auditingPolicies_Default_name_5'))]",
+            "apiVersion": "2014-04-01",
+            "location": "South Central US",
+            "scale": null,
+            "properties": {
+                "auditingState": "New",
+                "eventTypesToAudit": "PlainSQL_Success,PlainSQL_Failure,ParameterizedSQL_Success,ParameterizedSQL_Failure,StoredProcedure_Success,StoredProcedure_Failure,Login_Success,Login_Failure,TransactionManagement_Success,TransactionManagement_Failure",
+                "storageAccountName": null,
+                "storageAccountKey": null,
+                "storageAccountSecondaryKey": null,
+                "storageTableEndpoint": null,
+                "storageAccountResourceGroupName": null,
+                "storageAccountSubscriptionId": null,
+                "useServerDefault": "Enabled",
+                "fullAuditLogsTableName": "SQLDBAuditLogsCloudshopscusCloudshop",
+                "auditLogsTableName": "CloudshopscusCloudshop",
+                "retentionDays": "0"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_cloudshop_scus_name'))]",
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_cloudshop_scus_name'), parameters('databases_cloudshop_name_2'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Sql/servers/cloudshop-scus/databases/cloudshop/backupLongTermRetentionPolicies/Default'.",
+            "type": "Microsoft.Sql/servers/databases/backupLongTermRetentionPolicies",
+            "name": "[concat(parameters('servers_cloudshop_scus_name'), '/', parameters('databases_cloudshop_name_2'), '/', parameters('backupLongTermRetentionPolicies_Default_name_2'))]",
+            "apiVersion": "2014-04-01",
+            "location": "South Central US",
+            "scale": null,
+            "properties": {
+                "state": "Disabled",
+                "recoveryServicesBackupPolicyResourceId": null
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_cloudshop_scus_name'))]",
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_cloudshop_scus_name'), parameters('databases_cloudshop_name_2'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Sql/servers/cloudshop-scus/databases/cloudshop/geoBackupPolicies/Default'.",
+            "type": "Microsoft.Sql/servers/databases/geoBackupPolicies",
+            "name": "[concat(parameters('servers_cloudshop_scus_name'), '/', parameters('databases_cloudshop_name_2'), '/', parameters('geoBackupPolicies_Default_name_2'))]",
+            "apiVersion": "2014-04-01",
+            "location": "South Central US",
+            "scale": null,
+            "properties": {
+                "state": "Enabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_cloudshop_scus_name'))]",
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_cloudshop_scus_name'), parameters('databases_cloudshop_name_2'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Sql/servers/cloudshop-scus/databases/cloudshop/transparentDataEncryption/current'.",
+            "type": "Microsoft.Sql/servers/databases/transparentDataEncryption",
+            "name": "[concat(parameters('servers_cloudshop_scus_name'), '/', parameters('databases_cloudshop_name_2'), '/', parameters('transparentDataEncryption_current_name_2'))]",
+            "apiVersion": "2014-04-01",
+            "location": "South Central US",
+            "scale": null,
+            "properties": {
+                "status": "Enabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_cloudshop_scus_name'))]",
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_cloudshop_scus_name'), parameters('databases_cloudshop_name_2'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Sql/servers/cloudshop/auditingPolicies/Default'.",
+            "type": "Microsoft.Sql/servers/auditingPolicies",
+            "name": "[concat(parameters('servers_cloudshop_name'), '/', parameters('auditingPolicies_Default_name'))]",
+            "apiVersion": "2014-04-01",
+            "location": "West Europe",
+            "scale": null,
+            "properties": {
+                "auditingState": "New",
+                "eventTypesToAudit": "PlainSQL_Success,PlainSQL_Failure,ParameterizedSQL_Success,ParameterizedSQL_Failure,StoredProcedure_Success,StoredProcedure_Failure,Login_Success,Login_Failure,TransactionManagement_Success,TransactionManagement_Failure",
+                "storageAccountName": null,
+                "storageAccountKey": null,
+                "storageAccountSecondaryKey": null,
+                "storageTableEndpoint": null,
+                "storageAccountResourceGroupName": null,
+                "storageAccountSubscriptionId": null,
+                "fullAuditLogsTableName": "SQLDBAuditLogsCloudshop",
+                "auditLogsTableName": "Cloudshop",
+                "retentionDays": "0"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_cloudshop_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Sql/servers/cloudshop/backupLongTermRetentionVaults/RegisteredVault'.",
+            "type": "Microsoft.Sql/servers/backupLongTermRetentionVaults",
+            "name": "[concat(parameters('servers_cloudshop_name'), '/', parameters('backupLongTermRetentionVaults_RegisteredVault_name'))]",
+            "apiVersion": "2014-04-01",
+            "location": "West Europe",
+            "scale": null,
+            "properties": {
+                "recoveryServicesVaultResourceId": null
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_cloudshop_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Sql/servers/cloudshop/databases/cloudshop'.",
+            "type": "Microsoft.Sql/servers/databases",
+            "kind": "v12.0,user",
+            "name": "[concat(parameters('servers_cloudshop_name'), '/', parameters('databases_cloudshop_name'))]",
+            "apiVersion": "2014-04-01-preview",
+            "location": "West Europe",
+            "scale": null,
+            "properties": {
+                "databaseId": "3a3c418e-acad-4fe2-b457-6e67992e20b1",
+                "edition": "Standard",
+                "status": "Online",
+                "serviceLevelObjective": "S1",
+                "collation": "SQL_Latin1_General_CP1_CI_AS",
+                "maxSizeBytes": "2147483648",
+                "creationDate": "2017-10-30T09:20:33.377Z",
+                "currentServiceObjectiveId": "1b1ebd4d-d903-4baa-97f9-4ea675f5e928",
+                "requestedServiceObjectiveId": "1b1ebd4d-d903-4baa-97f9-4ea675f5e928",
+                "requestedServiceObjectiveName": "S1",
+                "sampleName": null,
+                "defaultSecondaryLocation": "North Europe",
+                "earliestRestoreDate": "2017-11-08T00:00:00Z",
+                "elasticPoolName": null,
+                "containmentState": 2,
+                "readScale": "Disabled",
+                "failoverGroupId": "[resourceId('Microsoft.Sql/servers/failoverGroups', parameters('servers_cloudshop_name'), parameters('failoverGroups_failgroupcloudshop_name'))]",
+                "zoneRedundant": false
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_cloudshop_name'))]",
+                "[resourceId('Microsoft.Sql/servers/failoverGroups', parameters('servers_cloudshop_name'), parameters('failoverGroups_failgroupcloudshop_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Sql/servers/cloudshop/databases/master'.",
+            "type": "Microsoft.Sql/servers/databases",
+            "kind": "v12.0,system",
+            "name": "[concat(parameters('servers_cloudshop_name'), '/', parameters('databases_master_name'))]",
+            "apiVersion": "2014-04-01-preview",
+            "location": "West Europe",
+            "scale": null,
+            "properties": {
+                "databaseId": "74619820-d926-4afa-abfe-cfbe62d721ed",
+                "edition": "System",
+                "status": "Online",
+                "serviceLevelObjective": "System0",
+                "collation": "SQL_Latin1_General_CP1_CI_AS",
+                "maxSizeBytes": "32212254720",
+                "creationDate": "2017-10-30T09:19:38.563Z",
+                "currentServiceObjectiveId": "29dd7459-4a7c-4e56-be22-f0adda49440d",
+                "requestedServiceObjectiveId": "29dd7459-4a7c-4e56-be22-f0adda49440d",
+                "requestedServiceObjectiveName": "System0",
+                "sampleName": null,
+                "defaultSecondaryLocation": "North Europe",
+                "earliestRestoreDate": null,
+                "elasticPoolName": null,
+                "containmentState": 2,
+                "readScale": "Disabled",
+                "failoverGroupId": null,
+                "zoneRedundant": null
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_cloudshop_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Sql/servers/cloudshop/firewallRules/AllowAllWindowsAzureIps'.",
+            "type": "Microsoft.Sql/servers/firewallRules",
+            "kind": "v12.0",
+            "name": "[concat(parameters('servers_cloudshop_name'), '/', parameters('firewallRules_AllowAllWindowsAzureIps_name'))]",
+            "apiVersion": "2014-04-01-preview",
+            "location": "West Europe",
+            "scale": null,
+            "properties": {
+                "startIpAddress": "0.0.0.0",
+                "endIpAddress": "0.0.0.0"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_cloudshop_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Sql/servers/cloudshop/firewallRules/ClientIPAddress_2017-10-30_09:24:59'.",
+            "type": "Microsoft.Sql/servers/firewallRules",
+            "kind": "v12.0",
+            "name": "[concat(parameters('servers_cloudshop_name'), '/', parameters('firewallRules_ClientIPAddress_2017_10_30_09:24:59_name'))]",
+            "apiVersion": "2014-04-01-preview",
+            "location": "West Europe",
+            "scale": null,
+            "properties": {
+                "startIpAddress": "79.169.179.29",
+                "endIpAddress": "79.169.179.29"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_cloudshop_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Sql/servers/cloudshop/firewallRules/ClientIPAddress_2017-11-06_09:11:32'.",
+            "type": "Microsoft.Sql/servers/firewallRules",
+            "kind": "v12.0",
+            "name": "[concat(parameters('servers_cloudshop_name'), '/', parameters('firewallRules_ClientIPAddress_2017_11_06_09:11:32_name'))]",
+            "apiVersion": "2014-04-01-preview",
+            "location": "West Europe",
+            "scale": null,
+            "properties": {
+                "startIpAddress": "94.245.87.250",
+                "endIpAddress": "94.245.87.250"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_cloudshop_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Sql/servers/cloudshop/encryptionProtector/current'.",
+            "type": "Microsoft.Sql/servers/encryptionProtector",
+            "kind": "servicemanaged",
+            "name": "[concat(parameters('servers_cloudshop_name'), '/', parameters('encryptionProtector_current_name'))]",
+            "apiVersion": "2015-05-01-preview",
+            "scale": null,
+            "properties": {
+                "serverKeyName": "ServiceManaged",
+                "serverKeyType": "ServiceManaged"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_cloudshop_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Sql/servers/cloudshop/failoverGroups/failgroupcloudshop'.",
+            "type": "Microsoft.Sql/servers/failoverGroups",
+            "name": "[concat(parameters('servers_cloudshop_name'), '/', parameters('failoverGroups_failgroupcloudshop_name'))]",
+            "apiVersion": "2015-05-01-preview",
+            "location": "West Europe",
+            "scale": null,
+            "properties": {
+                "readWriteEndpoint": {
+                    "failoverPolicy": "Automatic",
+                    "failoverWithDataLossGracePeriodMinutes": 60
+                },
+                "readOnlyEndpoint": {
+                    "failoverPolicy": "Disabled"
+                },
+                "partnerServers": [
+                    {
+                        "id": "[resourceId('Microsoft.Sql/servers', parameters('servers_cloudshop_eus_name'))]"
+                    }
+                ],
+                "databases": [
+                    "/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Sql/servers/cloudshop/databases/cloudshop"
+                ]
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_cloudshop_name'))]",
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_cloudshop_eus_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Sql/servers/cloudshop/keys/ServiceManaged'.",
+            "type": "Microsoft.Sql/servers/keys",
+            "kind": "servicemanaged",
+            "name": "[concat(parameters('servers_cloudshop_name'), '/', parameters('keys_ServiceManaged_name'))]",
+            "apiVersion": "2015-05-01-preview",
+            "scale": null,
+            "properties": {
+                "serverKeyType": "[parameters('keys_ServiceManaged_name')]"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_cloudshop_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Sql/servers/cloudshop/databases/cloudshop/advisors/CreateIndex'.",
+            "type": "Microsoft.Sql/servers/databases/advisors",
+            "name": "[concat(parameters('servers_cloudshop_name'), '/', parameters('databases_cloudshop_name'), '/', parameters('advisors_CreateIndex_name'))]",
+            "apiVersion": "2014-04-01",
+            "scale": null,
+            "properties": {
+                "autoExecuteValue": "Disabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_cloudshop_name'))]",
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_cloudshop_name'), parameters('databases_cloudshop_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Sql/servers/cloudshop/databases/cloudshop/advisors/DropIndex'.",
+            "type": "Microsoft.Sql/servers/databases/advisors",
+            "name": "[concat(parameters('servers_cloudshop_name'), '/', parameters('databases_cloudshop_name'), '/', parameters('advisors_DropIndex_name'))]",
+            "apiVersion": "2014-04-01",
+            "scale": null,
+            "properties": {
+                "autoExecuteValue": "Disabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_cloudshop_name'))]",
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_cloudshop_name'), parameters('databases_cloudshop_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Sql/servers/cloudshop/databases/cloudshop/advisors/DbParameterization'.",
+            "type": "Microsoft.Sql/servers/databases/advisors",
+            "name": "[concat(parameters('servers_cloudshop_name'), '/', parameters('databases_cloudshop_name'), '/', parameters('advisors_DbParameterization_name'))]",
+            "apiVersion": "2014-04-01",
+            "scale": null,
+            "properties": {
+                "autoExecuteValue": "Disabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_cloudshop_name'))]",
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_cloudshop_name'), parameters('databases_cloudshop_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Sql/servers/cloudshop/databases/cloudshop/advisors/SchemaIssue'.",
+            "type": "Microsoft.Sql/servers/databases/advisors",
+            "name": "[concat(parameters('servers_cloudshop_name'), '/', parameters('databases_cloudshop_name'), '/', parameters('advisors_SchemaIssue_name'))]",
+            "apiVersion": "2014-04-01",
+            "scale": null,
+            "properties": {
+                "autoExecuteValue": "Disabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_cloudshop_name'))]",
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_cloudshop_name'), parameters('databases_cloudshop_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Sql/servers/cloudshop/databases/cloudshop/advisors/ForceLastGoodPlan'.",
+            "type": "Microsoft.Sql/servers/databases/advisors",
+            "name": "[concat(parameters('servers_cloudshop_name'), '/', parameters('databases_cloudshop_name'), '/', parameters('advisors_ForceLastGoodPlan_name'))]",
+            "apiVersion": "2014-04-01",
+            "scale": null,
+            "properties": {
+                "autoExecuteValue": "Disabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_cloudshop_name'))]",
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_cloudshop_name'), parameters('databases_cloudshop_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Sql/servers/cloudshop/databases/cloudshop/auditingPolicies/Default'.",
+            "type": "Microsoft.Sql/servers/databases/auditingPolicies",
+            "name": "[concat(parameters('servers_cloudshop_name'), '/', parameters('databases_cloudshop_name'), '/', parameters('auditingPolicies_Default_name_3'))]",
+            "apiVersion": "2014-04-01",
+            "location": "West Europe",
+            "scale": null,
+            "properties": {
+                "auditingState": "Disabled",
+                "eventTypesToAudit": "PlainSQL_Success,PlainSQL_Failure,ParameterizedSQL_Success,ParameterizedSQL_Failure,StoredProcedure_Success,StoredProcedure_Failure,Login_Success,Login_Failure,TransactionManagement_Success,TransactionManagement_Failure",
+                "storageAccountName": "csbb7850030db6fx4bcex8f1",
+                "storageAccountKey": null,
+                "storageAccountSecondaryKey": null,
+                "storageTableEndpoint": "https://csbb7850030db6fx4bcex8f1.table.core.windows.net/",
+                "storageAccountResourceGroupName": "cloud-shell-storage-westeurope",
+                "storageAccountSubscriptionId": "b7850030-db6f-4bce-8f14-f56820faa1aa",
+                "useServerDefault": "Disabled",
+                "fullAuditLogsTableName": "SQLDBAuditLogsCloudshopCloudshop",
+                "auditLogsTableName": "CloudshopCloudshop",
+                "retentionDays": "0"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_cloudshop_name'))]",
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_cloudshop_name'), parameters('databases_cloudshop_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Sql/servers/cloudshop/databases/cloudshop/backupLongTermRetentionPolicies/Default'.",
+            "type": "Microsoft.Sql/servers/databases/backupLongTermRetentionPolicies",
+            "name": "[concat(parameters('servers_cloudshop_name'), '/', parameters('databases_cloudshop_name'), '/', parameters('backupLongTermRetentionPolicies_Default_name'))]",
+            "apiVersion": "2014-04-01",
+            "location": "West Europe",
+            "scale": null,
+            "properties": {
+                "state": "Disabled",
+                "recoveryServicesBackupPolicyResourceId": null
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_cloudshop_name'))]",
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_cloudshop_name'), parameters('databases_cloudshop_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Sql/servers/cloudshop/databases/cloudshop/geoBackupPolicies/Default'.",
+            "type": "Microsoft.Sql/servers/databases/geoBackupPolicies",
+            "name": "[concat(parameters('servers_cloudshop_name'), '/', parameters('databases_cloudshop_name'), '/', parameters('geoBackupPolicies_Default_name'))]",
+            "apiVersion": "2014-04-01",
+            "location": "West Europe",
+            "scale": null,
+            "properties": {
+                "state": "Enabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_cloudshop_name'))]",
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_cloudshop_name'), parameters('databases_cloudshop_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Sql/servers/cloudshop/databases/cloudshop/transparentDataEncryption/current'.",
+            "type": "Microsoft.Sql/servers/databases/transparentDataEncryption",
+            "name": "[concat(parameters('servers_cloudshop_name'), '/', parameters('databases_cloudshop_name'), '/', parameters('transparentDataEncryption_current_name'))]",
+            "apiVersion": "2014-04-01",
+            "location": "West Europe",
+            "scale": null,
+            "properties": {
+                "status": "Enabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_cloudshop_name'))]",
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_cloudshop_name'), parameters('databases_cloudshop_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Web/sites/CloudShop20171030093305/config/web'.",
+            "type": "Microsoft.Web/sites/config",
+            "name": "[concat(parameters('sites_CloudShop20171030093305_name'), '/', parameters('config_web_name'))]",
+            "apiVersion": "2016-08-01",
+            "location": "South Central US",
+            "tags": {
+                "hidden-related:/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Web/serverfarms/CloudShop20171030093305Plan": "empty"
+            },
+            "scale": null,
+            "properties": {
+                "numberOfWorkers": 1,
+                "defaultDocuments": [
+                    "Default.htm",
+                    "Default.html",
+                    "Default.asp",
+                    "index.htm",
+                    "index.html",
+                    "iisstart.htm",
+                    "default.aspx",
+                    "index.php",
+                    "hostingstart.html"
+                ],
+                "netFrameworkVersion": "v4.0",
+                "phpVersion": "5.6",
+                "pythonVersion": "",
+                "nodeVersion": "",
+                "linuxFxVersion": "",
+                "requestTracingEnabled": false,
+                "remoteDebuggingEnabled": false,
+                "remoteDebuggingVersion": "VS2012",
+                "httpLoggingEnabled": false,
+                "logsDirectorySizeLimit": 35,
+                "detailedErrorLoggingEnabled": false,
+                "publishingUsername": "$CloudShop20171030093305",
+                "publishingPassword": null,
+                "appSettings": null,
+                "metadata": null,
+                "connectionStrings": null,
+                "machineKey": null,
+                "handlerMappings": null,
+                "documentRoot": null,
+                "scmType": "None",
+                "use32BitWorkerProcess": true,
+                "webSocketsEnabled": false,
+                "alwaysOn": true,
+                "javaVersion": null,
+                "javaContainer": null,
+                "javaContainerVersion": null,
+                "appCommandLine": "",
+                "managedPipelineMode": "Integrated",
+                "virtualApplications": [
+                    {
+                        "virtualPath": "/",
+                        "physicalPath": "site\\wwwroot",
+                        "preloadEnabled": true,
+                        "virtualDirectories": null
+                    }
+                ],
+                "winAuthAdminState": 0,
+                "winAuthTenantState": 0,
+                "customAppPoolIdentityAdminState": false,
+                "customAppPoolIdentityTenantState": false,
+                "runtimeADUser": null,
+                "runtimeADUserPassword": null,
+                "loadBalancing": "LeastRequests",
+                "routingRules": [],
+                "experiments": {
+                    "rampUpRules": []
+                },
+                "limits": null,
+                "autoHealEnabled": false,
+                "autoHealRules": {
+                    "triggers": null,
+                    "actions": null
+                },
+                "tracingOptions": null,
+                "vnetName": "",
+                "siteAuthEnabled": false,
+                "siteAuthSettings": {
+                    "enabled": null,
+                    "unauthenticatedClientAction": null,
+                    "tokenStoreEnabled": null,
+                    "allowedExternalRedirectUrls": null,
+                    "defaultProvider": null,
+                    "clientId": null,
+                    "clientSecret": null,
+                    "issuer": null,
+                    "allowedAudiences": null,
+                    "additionalLoginParams": null,
+                    "isAadAutoProvisioned": false,
+                    "googleClientId": null,
+                    "googleClientSecret": null,
+                    "googleOAuthScopes": null,
+                    "facebookAppId": null,
+                    "facebookAppSecret": null,
+                    "facebookOAuthScopes": null,
+                    "twitterConsumerKey": null,
+                    "twitterConsumerSecret": null,
+                    "microsoftAccountClientId": null,
+                    "microsoftAccountClientSecret": null,
+                    "microsoftAccountOAuthScopes": null
+                },
+                "cors": null,
+                "push": null,
+                "apiDefinition": null,
+                "autoSwapSlotName": null,
+                "localMySqlEnabled": false,
+                "ipSecurityRestrictions": null
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_CloudShop20171030093305_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Web/sites/CloudShop20171030093305/hostNameBindings/cloudshop20171030093305.azurewebsites.net'.",
+            "type": "Microsoft.Web/sites/hostNameBindings",
+            "name": "[concat(parameters('sites_CloudShop20171030093305_name'), '/', parameters('hostNameBindings_cloudshop20171030093305.azurewebsites.net_name'))]",
+            "apiVersion": "2016-08-01",
+            "location": "South Central US",
+            "scale": null,
+            "properties": {
+                "siteName": "CloudShop20171030093305",
+                "domainId": null,
+                "hostNameType": "Verified"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_CloudShop20171030093305_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Web/sites/CloudShop20171030093305/hostNameBindings/cloudshoptm.trafficmanager.net'.",
+            "type": "Microsoft.Web/sites/hostNameBindings",
+            "name": "[concat(parameters('sites_CloudShop20171030093305_name'), '/', parameters('hostNameBindings_cloudshoptm.trafficmanager.net_name'))]",
+            "apiVersion": "2016-08-01",
+            "location": "South Central US",
+            "scale": null,
+            "properties": {
+                "siteName": "CloudShop20171030093305",
+                "domainId": null,
+                "hostNameType": "Verified"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_CloudShop20171030093305_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Web/sites/CloudShop20171030093305-we/config/web'.",
+            "type": "Microsoft.Web/sites/config",
+            "name": "[concat(parameters('sites_CloudShop20171030093305_we_name'), '/', parameters('config_web_name_1'))]",
+            "apiVersion": "2016-08-01",
+            "location": "West Europe",
+            "tags": {
+                "hidden-related:/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourcegroups/cloudshop/providers/Microsoft.Web/serverfarms/cloudshopwest": "empty"
+            },
+            "scale": null,
+            "properties": {
+                "numberOfWorkers": 1,
+                "defaultDocuments": [
+                    "Default.htm",
+                    "Default.html",
+                    "Default.asp",
+                    "index.htm",
+                    "index.html",
+                    "iisstart.htm",
+                    "default.aspx",
+                    "index.php",
+                    "hostingstart.html"
+                ],
+                "netFrameworkVersion": "v4.0",
+                "phpVersion": "5.6",
+                "pythonVersion": "",
+                "nodeVersion": "",
+                "linuxFxVersion": "",
+                "requestTracingEnabled": false,
+                "remoteDebuggingEnabled": false,
+                "remoteDebuggingVersion": "VS2012",
+                "httpLoggingEnabled": false,
+                "logsDirectorySizeLimit": 35,
+                "detailedErrorLoggingEnabled": false,
+                "publishingUsername": "$CloudShop20171030093305-we",
+                "publishingPassword": null,
+                "appSettings": null,
+                "metadata": null,
+                "connectionStrings": null,
+                "machineKey": null,
+                "handlerMappings": null,
+                "documentRoot": null,
+                "scmType": "None",
+                "use32BitWorkerProcess": true,
+                "webSocketsEnabled": false,
+                "alwaysOn": true,
+                "javaVersion": null,
+                "javaContainer": null,
+                "javaContainerVersion": null,
+                "appCommandLine": "",
+                "managedPipelineMode": "Integrated",
+                "virtualApplications": [
+                    {
+                        "virtualPath": "/",
+                        "physicalPath": "site\\wwwroot",
+                        "preloadEnabled": true,
+                        "virtualDirectories": null
+                    }
+                ],
+                "winAuthAdminState": 0,
+                "winAuthTenantState": 0,
+                "customAppPoolIdentityAdminState": false,
+                "customAppPoolIdentityTenantState": false,
+                "runtimeADUser": null,
+                "runtimeADUserPassword": null,
+                "loadBalancing": "LeastRequests",
+                "routingRules": [],
+                "experiments": {
+                    "rampUpRules": []
+                },
+                "limits": null,
+                "autoHealEnabled": false,
+                "autoHealRules": {
+                    "triggers": null,
+                    "actions": null
+                },
+                "tracingOptions": null,
+                "vnetName": "",
+                "siteAuthEnabled": false,
+                "siteAuthSettings": {
+                    "enabled": null,
+                    "unauthenticatedClientAction": null,
+                    "tokenStoreEnabled": null,
+                    "allowedExternalRedirectUrls": null,
+                    "defaultProvider": null,
+                    "clientId": null,
+                    "clientSecret": null,
+                    "issuer": null,
+                    "allowedAudiences": null,
+                    "additionalLoginParams": null,
+                    "isAadAutoProvisioned": false,
+                    "googleClientId": null,
+                    "googleClientSecret": null,
+                    "googleOAuthScopes": null,
+                    "facebookAppId": null,
+                    "facebookAppSecret": null,
+                    "facebookOAuthScopes": null,
+                    "twitterConsumerKey": null,
+                    "twitterConsumerSecret": null,
+                    "microsoftAccountClientId": null,
+                    "microsoftAccountClientSecret": null,
+                    "microsoftAccountOAuthScopes": null
+                },
+                "cors": null,
+                "push": null,
+                "apiDefinition": null,
+                "autoSwapSlotName": null,
+                "localMySqlEnabled": false,
+                "ipSecurityRestrictions": null
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_CloudShop20171030093305_we_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Web/sites/CloudShop20171030093305-we/hostNameBindings/cloudshop20171030093305-we.azurewebsites.net'.",
+            "type": "Microsoft.Web/sites/hostNameBindings",
+            "name": "[concat(parameters('sites_CloudShop20171030093305_we_name'), '/', parameters('hostNameBindings_cloudshop20171030093305_we.azurewebsites.net_name'))]",
+            "apiVersion": "2016-08-01",
+            "location": "West Europe",
+            "scale": null,
+            "properties": {
+                "siteName": "CloudShop20171030093305-we",
+                "domainId": null,
+                "hostNameType": "Verified"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_CloudShop20171030093305_we_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Web/sites/CloudShop20171030093305-we/hostNameBindings/cloudshoptm.trafficmanager.net'.",
+            "type": "Microsoft.Web/sites/hostNameBindings",
+            "name": "[concat(parameters('sites_CloudShop20171030093305_we_name'), '/', parameters('hostNameBindings_cloudshoptm.trafficmanager.net_name_1'))]",
+            "apiVersion": "2016-08-01",
+            "location": "West Europe",
+            "scale": null,
+            "properties": {
+                "siteName": "CloudShop20171030093305-we",
+                "domainId": null,
+                "hostNameType": "Verified"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_CloudShop20171030093305_we_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Web/sites/cloudshop20171030093305-sea/config/web'.",
+            "type": "Microsoft.Web/sites/config",
+            "name": "[concat(parameters('sites_cloudshop20171030093305_sea_name'), '/', parameters('config_web_name_2'))]",
+            "apiVersion": "2016-08-01",
+            "location": "Southeast Asia",
+            "tags": {
+                "hidden-related:/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourcegroups/cloudshop/providers/Microsoft.Web/serverfarms/cloudshop-sea": "empty"
+            },
+            "scale": null,
+            "properties": {
+                "numberOfWorkers": 1,
+                "defaultDocuments": [
+                    "Default.htm",
+                    "Default.html",
+                    "Default.asp",
+                    "index.htm",
+                    "index.html",
+                    "iisstart.htm",
+                    "default.aspx",
+                    "index.php",
+                    "hostingstart.html"
+                ],
+                "netFrameworkVersion": "v4.0",
+                "phpVersion": "5.6",
+                "pythonVersion": "",
+                "nodeVersion": "",
+                "linuxFxVersion": "",
+                "requestTracingEnabled": false,
+                "remoteDebuggingEnabled": false,
+                "remoteDebuggingVersion": "VS2012",
+                "httpLoggingEnabled": false,
+                "logsDirectorySizeLimit": 35,
+                "detailedErrorLoggingEnabled": false,
+                "publishingUsername": "$cloudshop20171030093305-sea",
+                "publishingPassword": null,
+                "appSettings": null,
+                "metadata": null,
+                "connectionStrings": null,
+                "machineKey": null,
+                "handlerMappings": null,
+                "documentRoot": null,
+                "scmType": "None",
+                "use32BitWorkerProcess": true,
+                "webSocketsEnabled": false,
+                "alwaysOn": true,
+                "javaVersion": null,
+                "javaContainer": null,
+                "javaContainerVersion": null,
+                "appCommandLine": "",
+                "managedPipelineMode": "Integrated",
+                "virtualApplications": [
+                    {
+                        "virtualPath": "/",
+                        "physicalPath": "site\\wwwroot",
+                        "preloadEnabled": true,
+                        "virtualDirectories": null
+                    }
+                ],
+                "winAuthAdminState": 0,
+                "winAuthTenantState": 0,
+                "customAppPoolIdentityAdminState": false,
+                "customAppPoolIdentityTenantState": false,
+                "runtimeADUser": null,
+                "runtimeADUserPassword": null,
+                "loadBalancing": "LeastRequests",
+                "routingRules": [],
+                "experiments": {
+                    "rampUpRules": []
+                },
+                "limits": null,
+                "autoHealEnabled": false,
+                "autoHealRules": {
+                    "triggers": null,
+                    "actions": null
+                },
+                "tracingOptions": null,
+                "vnetName": "",
+                "siteAuthEnabled": false,
+                "siteAuthSettings": {
+                    "enabled": null,
+                    "unauthenticatedClientAction": null,
+                    "tokenStoreEnabled": null,
+                    "allowedExternalRedirectUrls": null,
+                    "defaultProvider": null,
+                    "clientId": null,
+                    "clientSecret": null,
+                    "issuer": null,
+                    "allowedAudiences": null,
+                    "additionalLoginParams": null,
+                    "isAadAutoProvisioned": false,
+                    "googleClientId": null,
+                    "googleClientSecret": null,
+                    "googleOAuthScopes": null,
+                    "facebookAppId": null,
+                    "facebookAppSecret": null,
+                    "facebookOAuthScopes": null,
+                    "twitterConsumerKey": null,
+                    "twitterConsumerSecret": null,
+                    "microsoftAccountClientId": null,
+                    "microsoftAccountClientSecret": null,
+                    "microsoftAccountOAuthScopes": null
+                },
+                "cors": null,
+                "push": null,
+                "apiDefinition": null,
+                "autoSwapSlotName": null,
+                "localMySqlEnabled": false,
+                "ipSecurityRestrictions": null
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_cloudshop20171030093305_sea_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Web/sites/cloudshop20171030093305-sea/hostNameBindings/cloudshop20171030093305-sea.azurewebsites.net'.",
+            "type": "Microsoft.Web/sites/hostNameBindings",
+            "name": "[concat(parameters('sites_cloudshop20171030093305_sea_name'), '/', parameters('hostNameBindings_cloudshop20171030093305_sea.azurewebsites.net_name'))]",
+            "apiVersion": "2016-08-01",
+            "location": "Southeast Asia",
+            "scale": null,
+            "properties": {
+                "siteName": "cloudshop20171030093305-sea",
+                "domainId": null,
+                "hostNameType": "Verified"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_cloudshop20171030093305_sea_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/b7850030-db6f-4bce-8f14-f56820faa1aa/resourceGroups/cloudshop/providers/Microsoft.Web/sites/cloudshop20171030093305-sea/hostNameBindings/cloudshoptm.trafficmanager.net'.",
+            "type": "Microsoft.Web/sites/hostNameBindings",
+            "name": "[concat(parameters('sites_cloudshop20171030093305_sea_name'), '/', parameters('hostNameBindings_cloudshoptm.trafficmanager.net_name_2'))]",
+            "apiVersion": "2016-08-01",
+            "location": "Southeast Asia",
+            "scale": null,
+            "properties": {
+                "siteName": "cloudshop20171030093305-sea",
+                "domainId": null,
+                "hostNameType": "Verified"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_cloudshop20171030093305_sea_name'))]"
+            ]
+        }
+    ]
+}
